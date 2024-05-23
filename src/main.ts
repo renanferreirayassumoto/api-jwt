@@ -15,9 +15,7 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
 
-  app.enableCors({
-    origin: 'https://sistema-produtos-frontend.vercel.app/',
-  });
+  app.enableCors();
   app.useGlobalPipes(new ValidationPipe());
   await app.listen(3000);
 }
